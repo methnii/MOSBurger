@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="IMG/navIMG.png" type="image/x-icon">
+    <title>MOS Burger Shop - Menu</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/menu.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="login.html">
+          <img
+            src="IMG/websiteimg.png"
+            alt="MOS Burger Logo"
+          />
+          <span class="ms-2">MOS BURGER</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="placeOrder.html"
+                >Place Order</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="menu.html"
+                >Menu</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="orderHistory.html"
+                >Order History</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="customerList.html"
+                >Customer List</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="search-container">
+        <div class="input-group">
+          <span class="input-group-text"><i class="fas fa-search"></i></span>
+          <input
+            type="text"
+            id="menuSearch"
+            class="form-control"
+            placeholder="Search menu items..."
+          />
+        </div>
+      </div>
+
+      <div class="category-buttons">
+        <button class="category-btn" data-category="all">
+            <i class="fas fa-utensils"></i>
+            <small>All</small>
+        </button>
+        <button class="category-btn" data-category="burgers">
+            <i class="fas fa-hamburger"></i>
+            <small>Burgers</small>
+        </button>
+        <button class="category-btn" data-category="sides">
+            <i class="fas fa-drumstick-bite"></i>
+            <small>Sides</small>
+        </button>
+        <button class="category-btn" data-category="drinks">
+            <i class="fas fa-glass-martini-alt"></i>
+            <small>Drinks</small>
+        </button>
+        <button class="category-btn" data-category="desserts">
+            <i class="fas fa-ice-cream"></i>
+            <small>Desserts</small>
+        </button>
+    </div>
+
+      <div class="menu-grid" id="menuGrid">
+      </div>
+    </div>
+
+    <div class="modal fade" id="editMenuModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Menu Item</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="editMenuForm">
+              <input type="hidden" id="editItemId" />
+              <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Price (LKR)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="editPrice"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Category</label>
+                <select class="form-select" id="editCategory" required>
+                  <option value="burgers">Burgers</option>
+                  <option value="sides">Sides</option>
+                  <option value="drinks">Drinks</option>
+                  <option value="desserts">Desserts</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Image URL</label>
+                <input
+                  type="url"
+                  class="form-control"
+                  id="editImage"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" id="saveMenuItem">
+              Save Changes
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="viewMenuModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">View Menu Item</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <img id="viewImage" class="img-fluid mb-3" />
+            <h4 id="viewName"></h4>
+            <p id="viewCategory" class="text-muted"></p>
+            <h5 id="viewPrice"></h5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/menu.js"></script>
+  </body>
+</html>

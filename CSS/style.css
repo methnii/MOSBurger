@@ -1,0 +1,142 @@
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #ffffff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+.navbar {
+    background-color: var(--secondary-color);
+    padding: 0.8rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.burger-section {
+    height: 100vh;
+    margin-top: 0;
+}
+
+.left-section {
+    background-color: var(--secondary-color);
+    padding: 2rem 4rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.right-section {
+    background-color: var(--primary-color);
+    padding: 2rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-image: url("IMG/istockphoto-520410807-612x612.jpg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.login-card {
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 25px;
+    width: 30vw;
+    max-width: 400px;
+    position: relative;
+    z-index: 100;
+}
+
+.burger-title {
+    font-size: calc(3rem + 2vw);
+    font-weight: bold;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.login-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0.75rem 2.5rem;
+    border-radius: 25px;
+    border: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+    background-color: #333;
+}
+
+.burger-image {
+    width: min(400px, 90vw);
+    height: min(400px, 90vw);
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+    
+
+.burger-image:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: var(--primary-color);
+    margin: 0 1rem;
+    font-size: 1.1rem;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+#burgerImage {
+    animation: float 3s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .burger-section {
+        flex-direction: column;
+    }
+    
+    .left-section, .right-section {
+        height: 50vh;
+        padding: 2rem;
+    }
+    
+    .burger-title {
+        font-size: calc(2rem + 2vw);
+    }
+    
+    .burger-image {
+        width: min(300px, 80vw);
+        height: min(300px, 80vw);
+    }
+    
+    .login-card {
+        width: 100vw;
+        max-width: unset;
+    }
+}

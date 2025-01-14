@@ -1,0 +1,13 @@
+{
+    "liveServer.settings.port": 5501,
+    "codeium.detectProxy": false,
+    "codeium.enableCommandSideHintEducation": false,
+    "codeium.enableExplainProblem": false,
+    "codeium.enableInComments": false,
+    "codeium.useSecretStorage": false,
+    "css.completion.completePropertyWithSemicolon": false,
+    "css.completion.triggerPropertyValueCompletion": false,
+    "css.format.enable": false,
+    "css.format.newlineBetweenSelectors": false,
+    "css.format.newlineBetweenRules": false
+}

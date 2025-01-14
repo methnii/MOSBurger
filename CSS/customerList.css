@@ -1,0 +1,82 @@
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #ffffff;
+}
+
+body {
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: var(--primary-color);
+    padding: 1rem;
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.nav-link {
+    color: var(--secondary-color) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+.active {
+    color: #ffc107 !important;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.add-customer-btn {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.add-customer-btn:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}
+
+.add-customer-btn i {
+    font-size: 1.2rem;
+}
+
+.add-customer-btn::after {
+    display: none;
+}
+
+.search-container {
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-close {
+    filter: brightness(0) invert(1);
+}
